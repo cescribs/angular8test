@@ -1,0 +1,23 @@
+<h2>Products</h2>
+
+
+
+<div *ngFor="let product of products; index as productId">
+
+  <mat-card>
+    <h3>
+      <a [title]="product.name + ' details'" [routerLink]="['/products', productId]">
+        {{ product.name }}
+      </a>
+    </h3>
+    <p *ngIf="product.description">
+      {{ product.description }}
+    </p>
+    <div class="horizontal-buttons">
+    <button mat-raised-button color="primary" (click)=share()>Primary</button>    
+    <app-product-alerts class="horizontal-button" [product]="product"  (notify)="onNotify()">
+    </app-product-alerts>
+  </div>
+  </mat-card>
+  <mat-divider></mat-divider>
+</div>

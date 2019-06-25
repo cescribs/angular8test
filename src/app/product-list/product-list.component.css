@@ -1,0 +1,7 @@
+.horizontal-buttons {
+    display: flex;    
+}
+
+.horizontal-button{
+    margin-left: 10px;
+}
